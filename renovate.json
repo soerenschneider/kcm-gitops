@@ -7,6 +7,9 @@
   "flux": {
     "fileMatch": ["\\.yaml$"]
   },
+  "argocd": {
+    "fileMatch": ["\\.yaml$"]
+  },
   "packageRules": [
     {
       "matchDatasources": ["kubernetes"],
