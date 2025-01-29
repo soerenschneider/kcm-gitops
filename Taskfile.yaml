@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  renovate:
+    desc: Set correct repository for renovate bot
+    vars:
+      value: "k0rdent/kcm-demo" # TODO: get this value from a generic settings file
+    cmds:
+      - yq eval --inplace '.jobs.renovate.steps[1].env.RENOVATE_REPOSITORIES = "[\"{{.value}}\"]"' .github/workflows/renovate.yaml
+    silent: false
+    sources:
+      - .github/workflows/renovate.yaml
