@@ -1,0 +1,18 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: blue
+resources:
+  - ../../../../cluster-deployments/aws
+  - credential.yaml
+patches:
+  - target:
+      kind: ClusterDeployment
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: "cluster-1"
+      - op: replace
+        path: /spec/config/clusterLabels
+        value:
+          env: prod

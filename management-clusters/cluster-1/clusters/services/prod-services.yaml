@@ -1,0 +1,17 @@
+apiVersion: k0rdent.mirantis.com/v1alpha1
+kind: MultiClusterService
+metadata:
+  name: multiclusterservice
+spec:
+  clusterSelector:
+    matchLabels:
+      env: prod
+  serviceSpec:
+    priority: 1000
+    services:
+      - name: kyverno
+        namespace: kyverno
+        template: kyverno-3-2-6
+      - name: ingress-nginx
+        namespace: ingress-nginx
+        template: ingress-nginx-4-11-0

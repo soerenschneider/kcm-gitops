@@ -1,0 +1,17 @@
+---
+apiVersion: k0rdent.mirantis.com/v1alpha1
+kind: ClusterDeployment
+metadata:
+  name: my-azure-clusterdeployment1
+  namespace: kcm-system
+spec:
+  template: azure-standalone-cp-0-1-0 # name of the clustertemplate
+  credential: azure-cluster-identity-cred
+  config:
+    clusterLabels: {}
+    location: "AZURE_LOCATION" # Select your desired Azure Location
+    subscriptionID: SUBSCRIPTION_ID_SUBSCRIPTION_ID # Enter the Subscription ID used earlier
+    controlPlane:
+      vmSize: Standard_A4_v2
+    worker:
+      vmSize: Standard_A4_v2
