@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: ghcr.io/k0rdent/kcm/charts
-    targetRevision: "0.0.6"
+    targetRevision: "0.1.0"
     chart: kcm
   destination:
     name: "in-cluster"
